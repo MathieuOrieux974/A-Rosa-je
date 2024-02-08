@@ -22,6 +22,12 @@ public class Plante implements Serializable {
 
     @OneToMany(mappedBy="plante")
     private Set<Photo> photos;
+
+    @OneToMany(mappedBy="plante")
+    private Set<Conseil> conseils;
+
+    @ManyToMany(mappedBy="plantes")
+    private Set<Botaniste> botanistes;
     public Integer getId_plante() {
         return id_plante;
     }
