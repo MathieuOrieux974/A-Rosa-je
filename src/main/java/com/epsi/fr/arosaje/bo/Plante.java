@@ -3,6 +3,8 @@ package com.epsi.fr.arosaje.bo;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Set;
+
 @Entity
 public class Plante implements Serializable {
     @Id
@@ -17,6 +19,9 @@ public class Plante implements Serializable {
     @ManyToOne
     @JoinColumn(name="id_proprietaire")
     private Utilisateur utilisateur;
+
+    @OneToMany(mappedBy="plante")
+    private Set<Photo> photos;
     public Integer getId_plante() {
         return id_plante;
     }
