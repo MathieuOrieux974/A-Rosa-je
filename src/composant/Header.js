@@ -19,7 +19,7 @@ const Header = () => {
             <Toolbar>
                 {/* Logo */}
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <img src="./arosaje.png" alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
+                    <img src="./arosaje.png" alt="Logo" style={{ height: '50px', marginRight: '5px' }} />
                     Bienvenue sur A-Rosa-je !
                 </Typography>
                 {/* Menu déroulant */}
