@@ -11,6 +11,7 @@ const Header = () => {
                 <Button color="inherit">Accueil</Button>
                 <Button color="inherit">À Propos</Button>
                 <Button color="inherit">Contact</Button>
+                <Button color="inherit">Profil</Button>
             </Toolbar>
         </AppBar>
     );
