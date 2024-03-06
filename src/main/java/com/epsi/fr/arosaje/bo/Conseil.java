@@ -1,8 +1,11 @@
 package com.epsi.fr.arosaje.bo;
 
 import jakarta.persistence.*;
+import jdk.jshell.execution.Util;
 
 import java.io.Serializable;
+import java.util.Set;
+
 @Entity
 public class Conseil implements Serializable {
     @Id
@@ -13,8 +16,14 @@ public class Conseil implements Serializable {
     public Conseil() {
     }
     @ManyToOne
-    @JoinColumn(name="plante_id")
+    @JoinColumn(name="id_plante")
     private Plante plante;
+
+    @ManyToOne
+    @JoinColumn(name="id_utilisateur")
+    private Utilisateur utilisateur;
+
+
 
     public Integer getId_conseil() {
         return id_conseil;

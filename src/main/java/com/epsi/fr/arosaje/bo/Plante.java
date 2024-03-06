@@ -12,22 +12,23 @@ public class Plante implements Serializable {
     private Integer id_plante;
     private String nom_plante;
     private String description;
-    private String lieu;
+    private String variete;
 
     public Plante() {
     }
-    @ManyToOne
-    @JoinColumn(name="id_proprietaire")
-    private Utilisateur utilisateur;
 
+    @ManyToOne
+    @JoinColumn(name="id_utilisateur")
+    private Utilisateur utilisateur;
     @OneToMany(mappedBy="plante")
     private Set<Photo> photos;
 
     @OneToMany(mappedBy="plante")
     private Set<Conseil> conseils;
 
-    @ManyToMany(mappedBy="plantes")
-    private Set<Botaniste> botanistes;
+    @OneToOne
+    private Reservation reservation;
+
     public Integer getId_plante() {
         return id_plante;
     }
@@ -53,11 +54,11 @@ public class Plante implements Serializable {
     }
 
     public String getLieu() {
-        return lieu;
+        return variete;
     }
 
     public void setLieu(String lieu) {
-        this.lieu = lieu;
+        this.variete = variete;
     }
 
     @Override
@@ -66,7 +67,7 @@ public class Plante implements Serializable {
         sb.append("id_plante=").append(id_plante);
         sb.append(", nom_plante='").append(nom_plante).append('\'');
         sb.append(", description='").append(description).append('\'');
-        sb.append(", lieu='").append(lieu).append('\'');
+        sb.append(", variete='").append(variete).append('\'');
         sb.append('}');
         return sb.toString();
     }

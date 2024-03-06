@@ -13,7 +13,7 @@ public class Photo implements Serializable {
     public Photo() {
     }
     @ManyToOne
-    @JoinColumn(name="plante_id")
+    @JoinColumn(name="id_plante")
     private Plante plante;
 
     public Integer getId_photo() {

@@ -1,12 +1,25 @@
 package com.epsi.fr.arosaje.bo;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Utilisateur implements Serializable {
+public class Utilisateur implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_utilisateur;
@@ -14,61 +27,53 @@ public class Utilisateur implements Serializable {
     private String nom;
     private String mail;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
-    public Utilisateur() {
-    }
+
     @OneToMany(mappedBy="utilisateur")
     private Set<Plante> plantes;
+    @OneToMany(mappedBy="utilisateur")
+    private Set<Reservation> reservations;
 
-    public Integer getId_utilisateur() {
-        return id_utilisateur;
+    @OneToMany(mappedBy="utilisateur")
+    private Set<Conseil> conseils;
+
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
-    public void setId_utilisateur(Integer id_utilisateur) {
-        this.id_utilisateur = id_utilisateur;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
+    @Override
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String getUsername() {
+        return mail;
     }
 
     @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Utilisateur{");
-        sb.append("id_utilisateur=").append(id_utilisateur);
-        sb.append(", prenom='").append(prenom).append('\'');
-        sb.append(", nom='").append(nom).append('\'');
-        sb.append(", mail='").append(mail).append('\'');
-        sb.append(", password='").append(password).append('\'');
-        sb.append('}');
-        return sb.toString();
+    public boolean isAccountNonExpired() {
+        return true;
     }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
 }
