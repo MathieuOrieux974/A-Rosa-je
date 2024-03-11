@@ -1,5 +1,6 @@
 package com.epsi.fr.arosaje.auth;
 
+import com.epsi.fr.arosaje.bo.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +15,5 @@ public class RegisterRequest {
     private String nom;
     private String mail;
     private String password;
+    private Role role;
 }

@@ -27,6 +27,7 @@ public class Utilisateur implements UserDetails {
     private String nom;
     private String mail;
     private String password;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
