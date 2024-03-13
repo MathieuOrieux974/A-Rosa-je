@@ -1,0 +1,14 @@
+@use '@styles/variables.module.scss';
+
+.notFoundPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: variables.$app-min-height;
+
+  .container {
+    align-items: center;
+    max-width: 80vw;
+  }
+}

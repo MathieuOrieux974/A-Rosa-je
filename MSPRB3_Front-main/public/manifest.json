@@ -1,0 +1,15 @@
+{
+  "short_name": "Arosa-je",
+  "name": "Arosa-je",
+  "icons": [
+    {
+      "src": "/assets/logo/arosajeLogo.png",
+      "type": "image/png",
+      "sizes": "712x712"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

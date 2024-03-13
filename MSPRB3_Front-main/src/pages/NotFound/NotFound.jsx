@@ -1,0 +1,20 @@
+import { ArrowForward } from '@mui/icons-material';
+import { Box, Button, Stack, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import styles from './NotFound.module.scss';
+
+export function NotFound() {
+  const navigate = useNavigate();
+
+  return (
+    <Box className={styles.notFoundPage}>
+      <Stack gap={2} className={styles.container}>
+        <Typography variant="h1">Page indisponible</Typography>
+        <Typography variant="h6">La page que vous essayez de consulter n&apos;existe pas ou a été supprimée</Typography>
+        <Button variant="contained" endIcon={<ArrowForward />} onClick={() => navigate('/')}>
+          Revenir en lieu sûr
+        </Button>
+      </Stack>
+    </Box>
+  );
+}

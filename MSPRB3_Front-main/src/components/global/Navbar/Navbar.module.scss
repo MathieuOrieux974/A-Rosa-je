@@ -1,0 +1,22 @@
+@use '@styles/variables.module.scss';
+
+.navbar {
+  height: variables.$navbar-height;
+  padding: 0 16px;
+
+  .arosajeLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    gap: 6px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .userMenu {
+    margin-left: auto;
+  }
+}

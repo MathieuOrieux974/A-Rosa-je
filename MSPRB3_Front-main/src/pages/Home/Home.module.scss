@@ -1,0 +1,28 @@
+@use '@styles/variables.module.scss';
+@use '@styles/colors.module.scss';
+
+.homePage {
+  height: variables.$app-min-height;
+
+  .plantsList {
+
+    .plantsListItem {
+      padding: 0.5rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: colors.$grey-background;
+      }
+      &.selectedPlantCard {
+        background-color: colors.$grey-background;
+      }
+    }
+  }
+
+  .mapContainer {
+    width: 60%;
+    height: 100%;
+  }
+}

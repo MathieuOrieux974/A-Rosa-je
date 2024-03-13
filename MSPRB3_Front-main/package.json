@@ -1,0 +1,62 @@
+{
+  "name": "msprb3_front",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@bytescale/upload-widget-react": "^4.18.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.20",
+    "@react-navigation/stack": "^6.3.28",
+    "@tanstack/react-query": "^5.27.5",
+    "@tanstack/react-query-devtools": "^5.13.3",
+    "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
+    "leaflet": "^1.9.4",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.50.1",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-cluster": "^2.1.0",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "5.0.1",
+    "sass": "^1.71.1",
+    "zustand": "^4.4.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "vite build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.20.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.1.0",
+    "vite": "^4.5.1"
+  }
+}
